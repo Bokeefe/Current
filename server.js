@@ -7,7 +7,7 @@ var app = express();
 var PORT = process.env.port || 8001;
 
 mongoose.Promise = global.Promise; // this silences the error about mongo's mpromise library
-mongoose.connect("mongodb://localhost");
+mongoose.connect("mongodb://heroku_q79xlp0l:is6r47qg3ab0beq1acjr0b6fl0@ds127948.mlab.com:27948/heroku_q79xlp0l");
 
 // pull in the user model
 var Interval = require("./intervalSurveySchema.js")(mongoose);
@@ -31,7 +31,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   }
 
   // Save database object from the callback for reuse.
-  db = "mongodb://heroku_q79xlp0l:is6r47qg3ab0beq1acjr0b6fl0@ds127948.mlab.com:27948/heroku_q79xlp0l";
+  db = database;//mongodb://heroku_q79xlp0l:is6r47qg3ab0beq1acjr0b6fl0@ds127948.mlab.com:27948/heroku_q79xlp0l
   console.log("Database connection ready");
 
   // Initialize the app.

@@ -1,7 +1,6 @@
 web: node server.js
 web: db mLab
-worker:  node chart.js
-worker:  node login.js
-worker:  node main.js
-worker:  node timer.js
-worker:  node node worker.js
+worker:  node ./public/chart.js
+worker:  node ./public/login.js
+worker:  node ./public/main.js
+worker:  node ./public/timer.js

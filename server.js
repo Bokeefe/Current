@@ -20,26 +20,26 @@ var dataFunctions = new dataFunctionsConstructor(mongoose, User, Chunk, Interval
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-var db;
+// // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+// var db;
 
-// Connect to the database before starting the application server. 
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
+// // Connect to the database before starting the application server. 
+// mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+//   if (err) {
+//     console.log(err);
+//     process.exit(1);
+//   }
 
-  // Save database object from the callback for reuse.
-  db = database;//mongodb://heroku_q79xlp0l:is6r47qg3ab0beq1acjr0b6fl0@ds127948.mlab.com:27948/heroku_q79xlp0l
-  console.log("Database connection ready");
+//   // Save database object from the callback for reuse.
+//   db = database;//mongodb://heroku_q79xlp0l:is6r47qg3ab0beq1acjr0b6fl0@ds127948.mlab.com:27948/heroku_q79xlp0l
+//   console.log("Database connection ready");
 
-  // Initialize the app.
-  var server = app.listen(process.env.PORT || 8080, function () {
-    var port = server.address().port;
-    console.log("App now running on port", port);
-  });
-});
+//   // Initialize the app.
+//   var server = app.listen(process.env.PORT || 8080, function () {
+//     var port = server.address().port;
+//     console.log("App now running on port", port);
+//   });
+// });
 
 // basic config for express-session
 app.use(session({

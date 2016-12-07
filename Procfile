@@ -1,2 +1,2 @@
 web: node server.js
-web: db mLab
+web db mLab
